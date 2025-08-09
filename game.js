@@ -1,32 +1,19 @@
-const readline = require('readline');
-
-// Configurar la interfaz para leer desde consola
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
+// Generar número aleatorio entre 0 y 30
 let numeroSecreto = Math.floor(Math.random() * 31);
+let adivinado = false;
 
-console.log("Adivina el número entre 0 y 30.");
+while (!adivinado) {
+    let intento = parseInt(prompt("Adivina el número (entre 0 y 30):"));
+    let diferencia = Math.abs(intento - numeroSecreto);
 
-function preguntar() {
-    rl.question("Ingresa tu número: ", (respuesta) => {
-        let intento = parseInt(respuesta);
-        let diferencia = Math.abs(intento - numeroSecreto);
-
-        if (intento === numeroSecreto) {
-            console.log(`¡Correcto! El número era ${numeroSecreto}`);
-            rl.close();
+    if (intento === numeroSecreto) {
+        console.log("🎉 ¡Correcto! El número era " + numeroSecreto);
+        adivinado = true;
+    } else {
+        if (diferencia > 5) {
+            console.log("❄️ Frío");
         } else {
-            if (diferencia > 5) {
-                console.log("❄️ Frío");
-            } else {
-                console.log("🔥 Caliente");
-            }
-            preguntar(); // vuelve a preguntar
+            console.log("🔥 Caliente");
         }
-    });
+    }
 }
-
-preguntar();
