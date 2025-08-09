@@ -7,7 +7,7 @@ while (!adivinado) {
     let diferencia = Math.abs(intento - numeroSecreto);
 
     if (intento === numeroSecreto) {
-        console.log("🎉 ¡Correcto! El número era " + numeroSecreto);
+        console.log("¡Correcto! El número era " + numeroSecreto);
         adivinado = true;
     } else {
         if (diferencia > 5) {
