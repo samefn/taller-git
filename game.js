@@ -12,6 +12,8 @@ while (!adivinado) {
     } else {
         if (diferencia > 5) {
             console.log("❄️ Frío");
+        } else if (diferencia >= 3 && diferencia <= 5) {
+            console.log("🌤️ Tibio");
         } else {
             console.log("🔥 Caliente");
         }
