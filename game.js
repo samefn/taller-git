@@ -16,7 +16,7 @@ function preguntar() {
         let diferencia = Math.abs(intento - numeroSecreto);
 
         if (intento === numeroSecreto) {
-            console.log(`🎉 ¡Correcto! El número era ${numeroSecreto}`);
+            console.log(`¡Correcto! El número era ${numeroSecreto}`);
             rl.close();
         } else {
             if (diferencia > 5) {
